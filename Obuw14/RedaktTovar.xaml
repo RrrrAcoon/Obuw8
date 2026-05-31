@@ -1,0 +1,16 @@
+﻿<Window x:Class="Obuw14.RedaktTovar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:m="clr-namespace:Obuw14.Modeli"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Obuw14"
+        mc:Ignorable="d"
+           Background="#FFFFFF"
+   FontFamily="Arial"
+   WindowStartupLocation="CenterScreen"
+        Title="Товар" Height="600" Width="400">
+    <Grid>
+        
+    </Grid>
+</Window>

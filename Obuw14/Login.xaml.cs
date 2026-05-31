@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.Entity;
+using Obuw14.Modeli;
 
 namespace Obuw14
 {
@@ -22,6 +24,36 @@ namespace Obuw14
         public Login()
         {
             InitializeComponent();
+            using(var db = new ObuwKontext())
+            {
+                db.Database.Initialize(false);
+            }
+        }
+
+        private void Knopka1(object sender, RoutedEventArgs e)
+        {
+            using (var db = new ObuwKontext())
+            {
+                var polzovatel = db.Polzovateli
+                    .Include(p => p.Rol)
+                    .FirstOrDefault(p => p.Login == txtLogin.Text && p.Parol == txtParol.Password);
+                if(polzovatel !=null)
+                {
+                    new MainWindow(polzovatel).Show();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Неверный логин и пароль", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+            }
+        }
+
+        private void Knopka2(object sender, RoutedEventArgs e)
+        {
+            new MainWindow(null).Show();
+            Close();
         }
     }
 }

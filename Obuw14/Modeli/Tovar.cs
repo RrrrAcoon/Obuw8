@@ -34,7 +34,7 @@ namespace Obuw14.Modeli
 
         public virtual ICollection<ZakazTovar> ZakaziTovarov { get; set; }
         [NotMapped]
-        public decimal TecuchayaCena => Skidka > 0 ? Math.Round(Cena - Cena * (decimal)Skidka / 100m, 2);
+        public decimal TecuchayaCena => Skidka > 0 ? Math.Round(Cena - Cena * (decimal)Skidka / 100m, 2):Cena;
         [NotMapped]
         public string Shapka => $"{Kategoriya.Nazvanie} | {Naimenovanie}";
         [NotMapped]
