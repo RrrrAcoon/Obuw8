@@ -159,10 +159,12 @@
     <Resource Include="Kartinki\Icon.ico" />
     <Resource Include="Kartinki\Icon.JPG" />
     <Resource Include="Kartinki\Icon.png" />
-    <Resource Include="Kartinki\picture.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Kartinki\picture.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

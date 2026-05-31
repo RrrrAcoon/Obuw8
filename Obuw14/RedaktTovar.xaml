@@ -10,7 +10,36 @@
    FontFamily="Arial"
    WindowStartupLocation="CenterScreen"
         Title="Товар" Height="600" Width="400">
-    <Grid>
-        
-    </Grid>
+    <StackPanel Margin="15">
+        <TextBlock x:Name="LbId" Text="Id"/>
+        <TextBox x:Name="txtId" Text="{Binding Id,Mode=OneWay}" IsReadOnly="True"/>
+
+        <TextBlock  Text="Артикул"/>
+        <TextBox Text="{Binding Artikul}" />
+        <TextBlock  Text="Наименование"/>
+        <TextBox Text="{Binding Naimenovanie}" />
+        <TextBlock  Text="Цена"/>
+        <TextBox Text="{Binding Cena}" />
+        <TextBlock  Text="Единица измерения"/>
+        <ComboBox x:Name="ComboEdinica" SelectedValue="{Binding EdinicaEzmereniyaId}" DisplayMemberPath="Nazvanie" SelectedValuePath="Id"/>
+        <TextBlock  Text="Поставщик"/>
+        <ComboBox x:Name="ComboPostavchik" SelectedValue="{Binding PostavchikId}" DisplayMemberPath="Nazvanie" SelectedValuePath="Id"/>
+        <TextBlock  Text="Производитель"/>
+        <ComboBox x:Name="ComboProizvoditel" SelectedValue="{Binding ProizvoditelId}" DisplayMemberPath="Nazvanie" SelectedValuePath="Id"/>
+        <TextBlock  Text="Категория"/>
+        <ComboBox x:Name="ComboKategoriya" SelectedValue="{Binding KategoriyaId}" DisplayMemberPath="Nazvanie" SelectedValuePath="Id"/>
+        <TextBlock  Text="Скидка"/>
+        <TextBox Text="{Binding Skidka}" />
+        <TextBlock  Text="Количество"/>
+        <TextBox Text="{Binding Kolichestvo}" />
+        <TextBlock  Text="Описание"/>
+        <TextBox Text="{Binding Opisanie}" Margin="0,0,0,10"/>
+        <TextBlock  Text="Фото"/>
+        <Image Height="100" Source="{Binding PolniyPutKFoto}" Margin="0,0,0,20"/>
+        <Button Click="Foto" Content="Загрузить фото" Height="30" Margin="0,0,0,20"/>
+
+        <Button Click="Sphranit" Content="Сохранить" Background="LightGreen" Height="30"/>
+
+    </StackPanel>
+
 </Window>

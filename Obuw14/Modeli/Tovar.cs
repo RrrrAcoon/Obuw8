@@ -40,7 +40,7 @@ namespace Obuw14.Modeli
         [NotMapped]
         public string CvetFona => Kolichestvo <= 0 ? "LightGreen" : (Skidka > 15 ? "LightBlue" : "Transparent");
         [NotMapped]
-        public string NormalnayaCena => Skidka > 0 ? "Collapsed" : "Visible";
+        public string NormalnayaCena => Skidka > 0 ? "Visible" : "Collapsed";
         [NotMapped]
         public object PolniyPutKFoto
         {
@@ -55,7 +55,7 @@ namespace Obuw14.Modeli
                 img.BeginInit();
                 img.CacheOption = BitmapCacheOption.OnLoad;
                 img.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
-                img.UriSource = new Uri(papka, UriKind.Absolute);
+                img.UriSource = new Uri(put, UriKind.Absolute);
                 img.EndInit();
 
                 return img;

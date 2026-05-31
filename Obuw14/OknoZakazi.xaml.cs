@@ -104,5 +104,11 @@ namespace Obuw14
             if (_pol?.RolId == 1 && LvElement.SelectedItem is Zakaz)
                 OtkritZakaz(LvElement.SelectedItem as Zakaz);
         }
+
+        private void Nazad(object sender, RoutedEventArgs e)
+        {
+            new MainWindow(_pol).Show();
+            Close();
+        }
     }
 }

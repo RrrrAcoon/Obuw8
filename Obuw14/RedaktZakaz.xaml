@@ -9,7 +9,6 @@
            Background="#FFFFFF"
    FontFamily="Arial"
    WindowStartupLocation="CenterScreen"
-        d:DataContext="{d:DesignInstance Type=m:Zakaz}"
         Title="Заказ" Height="450" Width="400">
     <StackPanel Margin="15">
         <TextBlock x:Name="LbArtikul" Text="Артикул"/>
@@ -17,5 +16,19 @@
 
         <TextBlock  Text="Дата заказа"/>
         <DatePicker Text="{Binding DataZakaza}" />
+        <TextBlock  Text="Дата выдачи"/>
+        <DatePicker Text="{Binding DataVidachi}" />
+        <TextBlock  Text="Пункт выдачи"/>
+        <ComboBox x:Name="ComboPunkt" SelectedValue="{Binding PunktVidachiId}" DisplayMemberPath="Adres" SelectedValuePath="Id"/>
+        <TextBlock  Text="Клиент"/>
+        <ComboBox x:Name="ComboClient" SelectedValue="{Binding PolzovatelId }" DisplayMemberPath="FIO" SelectedValuePath="Id"/>
+        <TextBlock  Text="Статус"/>
+        <ComboBox x:Name="ComboStatus" SelectedValue="{Binding StatusZakazaId}" DisplayMemberPath="Nazvanie" SelectedValuePath="Id"/>
+
+        <TextBlock  Text="Код"/>
+        <TextBox Text="{Binding KodPolucheniya}" Margin="0,0,0,20"/>
+
+        <Button Click="Sphranit" Content="Сохранить" Background="LightGreen" Height="30"/>
+
     </StackPanel>
 </Window>

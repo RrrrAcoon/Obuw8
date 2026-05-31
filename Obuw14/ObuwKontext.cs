@@ -10,7 +10,7 @@ namespace Obuw14
 {
     public class ObuwKontext : DbContext
     {
-        public ObuwKontext() : base() 
+        public ObuwKontext() : base("name=PodklBd") 
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ObuwKontext>());
         }
